@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matematika Disret "Peluang"</title>
+    
+    <link rel="stylesheet" href="Project.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div style="text-align: center; margin-bottom: 20px;">
+            <img src="c:\Users\Lenovo\Downloads\copy.jpg" alt="Logo" style="width: 80px; height: auto;">
+            <p><strong>MATEMATIKA DISKRIT</strong></p>
+        </div>
+        
+        <h2>Menu</h2>
+        <ul id="menu-list">
+            <li><a href="#" class="active" data-target="predict">Menentukan nilai</a></li>
+            <li><a href="#" data-target="theory">Dasar Teori</a></li>
+            <li><a href="#" data-target="examples">Contoh Soal</a></li>
+            <li><a href="#" data-target="Deskripsi">Deskripsi</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="card active" id="predict">
+            <h1>🎲 Menentukan Nilai Peluang Matematika Diskrit</h1>
+            <p>Masukkan nilai untuk menghitung probabilitas kejadian (misalnya, pelemparan dadu, koin, atau pengambilan bola).</p>
+            <hr>
+            <h2>Input Percobaan</h2>
+            <form id="prediction-form">
+                <div class="input-group">
+                    <label for="sampleSpace">Jumlah Ruang Sampel Total S :</label>
+                    <input type="number" id="sampleSpace" name="sampleSpace" value="6" required> 
+                </div>
+                <div class="input-group">
+                    <label for="eventCount">Jumlah Titik Sampel Kejadian A :</label>
+                    <input type="number" id="eventCount" name="eventCount" value="3" required>
+                </div>
+                <button type="button" class="calculate-button" id="calculate-btn-simple">Hitung Hasil Peluang</button>
+            </form>
+            <div class="prediction-result" id="result-box">
+                <label>Hasil Peluang P(A):</label>
+                <span id="prediction-value">...</span>
+            </div>
+        </div>
+
+        <div class="card" id="theory">
+            <h1>📖 Dasar Teori Peluang Matematika Diskrit</h1>
+            <p>Peluang dalam matematika diskrit adalah probabilitas suatu peristiwa yang terjadi pada ruang sampel yang memiliki 
+                jumlah hasil yang terbatas atau dapat dihitung, seperti melempar dadu atau koin. Peluang ini diukur dengan angka 
+                antara 0 (tidak mungkin) dan 1 (pasti terjadi), dan jumlah peluang semua kemungkinan hasil adalah 1.</p>
+            <hr>
+            <h2>Ruang Sampel (S) dan Kejadian (A)</h2>
+            <p><strong>Ruang Sampel (S):</strong> Himpunan dari semua hasil yang mungkin dari suatu percobaan.</p>
+            <p><strong>Kejadian (A):</strong> Himpunan bagian (subset) dari ruang sampel. Kejadian adalah hasil yang kita minati.</p>
+            <h2>Rumus Dasar Peluang sebagai Berikut:</h2>
+            <h3>1. P(A) = n(A)/n(S) ket: P(A) = peluang Kejadian A</h3>
+                <p></p>
+                <pre><h2>  n(A) = Kejadian A </h2></pre>
+                <pre><h2>  n(S) = Ruang Sampel </h2></pre>
+            <p></p>
+            <h3>2. Komplemen Suatu Kejadian </h3>
+                <pre><h2>  P (Ά) = 1- P(A)</h2></pre>
+                 <pre><h2>  atau</h2></pre> 
+                <pre><h2>  P (Ά) + P(A) = 1</h2></pre>
+            <p></p>
+            <h3>3. Frekuensi Harapan : (fh): 
+                <pre><h2>  fh = P(A) . n ket : n = banyaknya percobaan</h2></pre>
+            <p></p>
+            <h2>Contoh Konsep:</h2>
+            <pre><h2>1. Sebuah dadu 🡪 S={1,2,3,4,5,6}</h2></pre>
+                <pre><h2>   Jadi kalau ada 2 dadu : 6^2 = 36</h2></pre>
+            <pre><h2>2. Uang Logam 🡪 S= {Angka, Gambar}</h2></pre>
+                <pre><h2>   Jadi kalau ada 2 uang logam : 2^2=4 </h2></pre>
+        </div>
+
+        <div class="card" id="Deskripsi">
+            <h1>Deskripsi Peluang Matematika Diskrit 🎲</h1>
+
+    <p>Peluang dalam Matematika Diskrit adalah studi tentang <strong>kemungkinan terjadinya suatu peristiwa</strong> dalam konteks di mana ruang sampel (himpunan semua hasil yang mungkin) bersifat <strong>terhitung (countable)</strong> dan biasanya <strong>terbatas (finite)</strong>.</p>
+    <p>Berbeda dengan peluang dalam matematika kontinu yang melibatkan variabel riil, Peluang Diskrit berfokus pada hasil yang dapat dihitung, seperti hasil lemparan dadu, jumlah koin, atau jumlah objek yang dipilih dari suatu himpunan.</p>
+
+    <hr>
+
+    <h2>1. Konsep Utama</h2>
+    <ul>
+        <li>
+            <strong>Ruang Sampel (S)</strong>: Himpunan semua hasil yang mungkin dari sebuah percobaan. Harus dapat dihitung.
+            <br><em>Contoh:</em> Melempar dua koin, S = {(A, A), (A, G), (G, A), (G, G)}.
+        </li>
+        <li>
+            <strong>Kejadian (A)</strong>: Subset dari ruang sampel. Hasil yang diminati.
+            <br><em>Contoh:</em> Kejadian munculnya setidaknya satu Angka (A).
+        </li>
+        <li>
+            <strong>Peluang (P(A))</strong>: Diukur sebagai rasio antara banyaknya hasil yang menguntungkan kejadian A dan total banyaknya hasil dalam ruang sampel S:
+            <p class="formula">P(A) = n(A) / n(S)</p>
+        </li>
+    </ul>
+    <h2>2. Sifat-sifat Peluang Diskrit</h2>
+    <ul>
+        <li>Peluang selalu berada dalam rentang 0 hingga 1: 0 ≤ P(A) ≤ 1.</li>
+        <li>Peluang dari kejadian pasti (S) adalah 1: P(S) = 1.</li>
+        <li>Peluang dari kejadian mustahil (∅) adalah 0: P(∅) = 0.</li>
+        <li>Untuk kejadian saling lepas (mutually exclusive) A dan B, P(A ∪ B) = P(A) + P(B).</li>
+    </ul>
+    <h2>3. Aplikasi Peluang Diskrit</h2>    
+    <ul>
+        <li><strong>Permutasi dan Kombinasi</strong>: Digunakan untuk menghitung jumlah cara pengaturan atau pemilihan objek, yang kemudian digunakan untuk menentukan peluang.</li>
+        <li><strong>Model Probabilistik</strong>: Digunakan dalam berbagai bidang seperti ilmu komputer, ekonomi, dan biologi untuk memodelkan sistem diskrit yang melibatkan ketidakpastian.</li>
+        <li><strong>Analisis Risiko</strong>: Digunakan untuk menilai risiko dalam situasi diskrit, seperti kegagalan sistem atau keputusan bisnis.</li>
+    </ul>
+    <h2>4. Contoh Sederhana</h2>
+    <p>Melempar sebuah dadu enam sisi. Ruang sampel S = {1, 2, 3, 4, 5, 6}. Kejadian A adalah munculnya angka genap: A = {2, 4, 6}. Maka peluangnya adalah:</p>
+    <p class="formula">P(A) = n(A) / n(S) = 3 / 6 = 1/2</p>
+    <p>Dengan demikian, peluang munculnya angka genap saat melempar dadu adalah 1/2 atau 50%.</p>
+        </div>
+
+        <div class="card" id="examples">
+            <h1>📝 Contoh Soal</h1>
+            <hr>
+            <h2>Soal 1</h2>
+            <p>Dua dadu di lempar bersama-sama.Tentukan peluang kejadian dadu yang akan muncul: </p>
+            <ul>
+                <li>A. Berjumlah 8</li>
+                <li>B. Berjumlah 10</li>
+                <li>C. Berjumlah kurang dari 4</li>
+                <li>D. Berjumlah lebih dari 4</li>
+            </ul>
+            <p><strong>Penyelesaian:</strong></p>
+            <ul>
+                <li>A. {(2,6),(3,5),(4,4),(5,3),(6,2)}, Maka banyak kejadian n(A) = 5,Lalu Kita hitung peluangnya (P(A)): P(A)=<sup>n(A)</sup>&frasl;<sub>n(S)</sub> = <sup>5</sup>&frasl;<sub>36</sub></li>
+                <p> </p>
+                <li>B. {(4,6),(5,5),(6,4)}, Maka banyak kejadian n(B) = 3, Lalu kita hitung peluangnya (P(B)): P(B) = <sup>n(B)</sup>&frasl;<sub>n(S)</sub> = <sup>3</sup>&frasl;<sub>36</sub> = <sup>1</sup>&frasl;<sub>12</sub></li>
+                <p> </p>
+                <li>C. Kita hitung n(C) nya terlebih dahulu
+                    <ul>
+                        <li>Berjumlah 2:(1,1)</li>
+                        <li>Berjumlah 3:(1,2),(2,1)</li>
+                        <li>Maka banyaknya kejadian n(C) = 1+2 = 3</li>
+                        <li>Peluangnya adalah P(C) = <sup>n(C)</sup>&frasl;<sub>n(S)</sub> = <sup>3</sup>&frasl;<sub>36</sub> = <sup>1</sup>&frasl;<sub>12</sub></li>
+                        </ul>
+                </li>
+                <p> </p>
+                <li>D. Kita hitung n(D) nya terlebih dahulu 
+                    <ul>
+                        <li>Berjumlah 2:(1,1)</li>
+                        <li>Berjumlah 3:(1,2),(2,1)</li>
+                        <li>Berjumlah 4:(1,3),(2,2),(3,1)</li>
+                        <li>Maka banyaknya kejadian n(D) = 1+2+3= 6</li>
+                        <li><sup>n(D)</sup>&frasl;<sub>n(S)</sub> = <sup>6</sup>&frasl;<sub>36</sub> = <sup>1</sup>&frasl;<sub>6</sub></li>
+                    </ul> </li>
+            </ul>
+            <h2>Soal 2</h2>
+            <p>4 uang logam dilempar bersama sama, tentukan peluang munculnya: </p>
+            <ul>
+                <li>A. 3 angka</li>
+                <li>B. 3 gambar/li>
+                <li>C. minimal 2 gambar</li>
+                <li>D. 2 angka</li>
+            </ul>
+            <p><strong>Penyelesaian:</strong></p>
+            <ul>
+                <li>A. Angka(A), Gambar(G), (A,A,A,G),(A,A,G,A),(A,G,A,A),(G,A,A,A), Maka banyak kejadian n(A) = 4, Maka peluangnya adalah : P(A) = <sup>n(A)</sup>&frasl;<sub>n(S)</sub> = <sup>4</sup>&frasl;<sub>16</sub> = <sup>1</sup>&frasl;<sub>4</sub>  </li>
+                <p> </p>
+                <li>B. Angka(A), Gambar(G), (G,G,G,A),(G,G,A,G),(G,A,G,G),(A,G,G,G), Maka banyak kejadian n(B) = 4, Maka peluangnya adalah : P(B) = <sup>n(B)</sup>&frasl;<sub>n(S)</sub> = <sup>4</sup>&frasl;<sub>16</sub> = <sup>1</sup>&frasl;<sub>4</sub></li>
+                <p> </p>
+                <li>C. Kita hitung n(C) nya terlebih dahulu
+                    Minimal 2 gambar berarti kita hitung kejadian 2 gambar, 3 gambar, dan 4 gambar
+                    <ul>
+                        <li>2 gambar : (G,G,A,A),(G,A,G,A),(G,A,A,G),(A,G,G,A),(A,G,A,G),(A,A,G,G), n(2G) = 6</li>
+                        <li>3 gambar : (G,G,G,A),(G,G,A,G),(G,A,G,G),(A,G,G,G), n(3G) = 4</li>
+                        <li>4 gambar : (G,G,G,G), n(4G) = 1</li>
+                        <li>Maka banyak kejadian n(C) = 6+4+1=11, Maka peluangnya adalah : P(C) = <sup>n(C)</sup>&frasl;<sub>n(S)</sub> = <sup>11</sup>&frasl;<sub>16</sub></li>
+                    </ul>
+                <p> </p>
+                <li>D. Kita hitung n(D) nya terlebih dahulu
+                    <ul>
+                        <li>2 angka : (A,A,G,G),(A,G,A,G),(A,G,G,A),(G,A,A,G),(G,A,G,A),(G,G,A,A), n(2A) = 6</li>
+                        <li>Maka banyak kejadian n(D) = 6, Maka peluangnya adalah : P(D) = <sup>n(D)</sup>&frasl;<sub>n(S)</sub> = <sup>6</sup>&frasl;<sub>16</sub> = <sup>3</sup>&frasl;<sub>8</sub></li>
+                    </ul>
+                </li>
+            </ul>
+            <h2>Soal 3</h2>
+            <p>4 Siswa putra dan 4 putri mereka duduk berdampingan dalam satu baris</p>
+            <ul>
+                <li>A. Ada berapa mereka duduk?</li>
+            </ul>
+            <p><strong>Penyelesaian:</strong></p>
+            <ul>
+                <li>A. N = 4 + 4 = 8</li>
+                <ul>
+                    <li>Menghitung nilai faktorial : 8! = 8x7x6x5x4x3x2x1</li>
+                    <li>Maka banyak cara mereka duduk adalah 8! = 40320 cara</li>
+                </ul>
+            </ul>
+            <h2>Soal 4</h2>
+            <p>Darii kotak terdapat 6 bola merah dan 4 bola putih dari dalam kotak diambil 3 bola sekaligus secara acak, Tentukan peluang terambilnya: </p>
+            <ul>
+                <li>A. 2 bola merah</li>
+                <li>B. Semua bola putih</li>
+            </ul>
+            <p><strong>Penyelesaian:</strong></p>
+            <ul>
+                <li>A. Kita hitung terlebih dahulu</li>
+                <ul>
+                    <li>Banyak cara mengambil 2 bola merah dari 6 bola merah adalah C(6,2) = <sup>6!</sup>&frasl;<sub>2!(6-2)! </sub> = 15 cara</li>
+                    <li>Banyak cara mengambil 1 bola putih dari 4 bola putih adalah C(4,1) = <sup>4!</sup>&frasl;<sub>1!(4-1)! </sub> = 4 cara</li>
+                    <li>Maka banyak cara mengambil 2 bola merah dan 1 bola putih adalah 15 x 4 = 60 cara</li>
+                    <li>Banyak cara mengambil 3 bola dari 10 bola adalah C(10,3) = <sup>10!</sup>&frasl;<sub>3!(10-3)! </sub> = 120 cara</li>
+                    <li>Maka peluang terambilnya 2 bola merah dan 1 bola putih adalah P(E) = <sup>60</sup>&frasl;<sub>120</sub> = <sup>1</sup>&frasl;<sub>2</sub></li>
+                </ul>
+                <p> </p>
+                <li>B. Kita hitung terlebih dahulu</li>
+                <ul>
+                    <li>Banyak cara mengambil 3 bola putih dari 4 bola putih adalah C(4,3) = <sup>4!</sup>&frasl;<sub>3!(4-3)! </sub> = 4 cara</li>
+                    <li>Banyak cara mengambil 3 bola dari 10 bola adalah C(10,3) = <sup>10!</sup>&frasl;<sub>3!(10-3)! </sub> = 120 cara</li>
+                    <li>Maka peluang terambilnya 3 bola putih adalah P(E) = <sup>4</sup>&frasl;<sub>120</sub> = <sup>1</sup>&frasl;<sub>30</sub></li>
+                </ul>
+            </ul>
+            <h2>Soal 5</h2>
+            <p>Dua dadu dilempar sekali.Tentukan peluang kejadian mata dadu yang muncul berjumlah 4 atau berjumlah 6?</p>
+            <p><strong>Penyelesaian:</strong></p>
+            <p>n(S) = 6 x 6 = 36</p>
+            <p>(1,3),(2,2),(3,1), banyak kejadiann n(A) = 3</p>
+            <p>(1,5),(2,4),(3,3),(4,2),(5,1), banyak kejadian n(B) = 5</p>
+            <p>P(A atau B) = P(A) + P(B)</p>
+            <P>P(A atau B) = <sup>n(A)</sup>&frasl;<sub>n(S) + <sup>n(B)</sup>&frasl;<sub>n(S)</sub></sub></P>
+            <p>P(A atau B) = <sup>3</sup>&frasl;<sub>36</sub> + <sup>5</sup>&frasl;<sub>36</sub></p>
+            <p>P(A atau B) = <sup>3 + 5</sup>&frasl;<sub>36</sub></p>
+            <P>P(A atau B) = <sup>8</sup>&frasl;<sub>36</sub></P>
+            <p>Peluang yang sudah disederhanakan yaitu :</p>
+            <p>P(A atau B) = <sup>2</sup>&frasl;<sub>9</sub> </p>
+
+
+        </div>
+    </div>
+
+    <script src="Project.js" defer></script>
+
+
+
+</body>
+</html>

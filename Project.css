@@ -1,0 +1,87 @@
+/* Reset dasar */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #29c40e;
+    display: flex;
+    
+    /* KUNCI UTAMA 1: Kunci tinggi halaman selebar layar saja */
+    height: 100vh; 
+    overflow: hidden; /* Hilangkan scrollbar utama browser */
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f3d87a;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    
+    /* KUNCI UTAMA 2: Sidebar tinggi penuh & jika menu panjang, sidebar bisa discroll sendiri */
+    height: 100%; 
+    overflow-y: auto; 
+    flex-shrink: 0; /* Mencegah sidebar mengecil */
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    
+    /* KUNCI UTAMA 3: Hanya konten kanan yang bisa discroll */
+    height: 100%;
+    overflow-y: auto; /* Scrollbar muncul di dalam area ini, bukan di pinggir window */
+}
+
+/* --- Sisa CSS Desain (Card, Input, dll) Tetap Sama --- */
+.sidebar h2 {
+    color: #333;
+    margin-top: 0;
+    border-bottom: 2px solid #deeb6a;
+    padding-bottom: 10px;
+}
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+.sidebar ul li a {
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: #555;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.sidebar ul li a:hover, .sidebar ul li a.active {
+    background-color: #90ef9e;
+    color: #00bcd4;
+    font-weight: bold;
+}
+.card {
+    background-color: #daeb8c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: none; 
+}
+.card.active {
+    display: block;
+    /* Animasi halus saat muncul (Opsional) */
+    animation: fadeIn 0.3s;
+}
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+.input-group input[type="number"] { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+.calculate-button { padding: 10px 15px; background-color: #00bcd4; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+.calculate-button:hover { background-color: #0097a7; }
+.prediction-result { margin-top: 20px; padding: 15px; border: 1px solid #ddd; background-color: #f9f9f9; border-radius: 4px; }
+
+/* Animasi tambahan agar transisi lebih mulus */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
